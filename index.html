@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SCR Construtora — Sonhar, construir, realizar</title>
+<meta name="description" content="Construímos empreendimentos residenciais de alto padrão com excelência no Caminho das Árvores, em Salvador. EGEU, Maestro, Riserva Vita, Ravello, Unique Le Quartier, Palazzo Unique e Mansão Unique.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560;9..144,640&family=Archivo:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F4F1EA;
+  --paper-2:#ECE7DB;
+  --surface:#FBF9F4;
+  --ink:#0F1B2D;
+  --ink-2:#22344E;
+  --muted:#44536A;
+  --teal:#1C5D6B;
+  --teal-deep:#14454F;
+  --teal-vivid:#35919E;
+  --line:#D9D3C3;
+  --navy-band:#0C1728;
+  --focus:#B4552D;
+  --radius:18px;
+  --font-display:"Fraunces",Georgia,serif;
+  --font-body:"Archivo",Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--font-body);
+  font-size:1.0625rem;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img,video{display:block;max-width:100%}
+a{color:var(--teal)}
+:focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:4px}
+::selection{background:var(--teal);color:var(--surface)}
+.wrap{max-width:1400px;margin-inline:auto;padding-inline:1rem}
+@media(min-width:768px){.wrap{padding-inline:2rem}}
+.skip{position:absolute;left:-999px;top:0;background:var(--ink);color:var(--surface);padding:.5rem 1rem;z-index:60}
+.skip:focus{left:1rem;top:1rem}
+
+/* ---------- header ---------- */
+header.site{
+  position:sticky;top:0;z-index:50;
+  background:color-mix(in srgb, var(--paper) 92%, transparent);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.header-in{display:flex;align-items:center;gap:1.5rem;padding-block:1rem}
+.brand img{height:44px;width:auto}
+nav.main{margin-left:auto;display:none;gap:2rem}
+nav.main a{
+  color:var(--ink);text-decoration:none;font-weight:500;font-size:.98rem;
+  padding:.5rem 0;border-bottom:2px solid transparent;
+  transition:border-color .3s ease,color .3s ease;
+}
+nav.main a:hover{color:var(--teal);border-color:var(--teal)}
+@media(min-width:1024px){nav.main{display:flex}}
+.btn{
+  display:inline-flex;align-items:center;gap:.5rem;
+  background:var(--teal);color:var(--surface);
+  font-weight:700;font-size:1rem;text-decoration:none;
+  padding:1rem 1.5rem;border-radius:999px;border:0;cursor:pointer;
+  transition:background-color .3s ease,transform .3s ease;
+}
+.btn:hover{background:var(--teal-deep);transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--ink);border:2px solid var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--surface)}
+.btn.small{padding:.5rem 1rem;font-size:.93rem}
+.header-cta{margin-left:auto}
+@media(min-width:1024px){.header-cta{margin-left:0}}
+
+/* ---------- hero ---------- */
+.hero{padding-block:clamp(3rem,6vw,5.5rem) clamp(3.5rem,7vw,6rem)}
+.hero-grid{display:grid;gap:2.5rem;align-items:center}
+@media(min-width:1024px){.hero-grid{grid-template-columns:1fr 1fr;gap:4rem}}
+.eyebrow{
+  font-size:.82rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--teal);margin-bottom:1.5rem;
+  display:flex;align-items:center;gap:1rem;
+}
+.eyebrow::before{content:"";width:2.6rem;height:2px;background:var(--teal-vivid)}
+h1,h2,h3{font-family:var(--font-display);font-weight:640;line-height:1.04;letter-spacing:-0.02em;text-wrap:balance}
+h1{font-size:clamp(3rem,8.5vw,5.6rem);font-variation-settings:"opsz" 144}
+.hero-sub{max-width:65ch;margin-top:1.5rem;color:var(--ink-2);font-size:1.13rem}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:1rem;margin-top:2rem}
+.hero-stats{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;
+  margin-top:3rem;padding-top:2rem;border-top:1px solid var(--line);
+}
+.stat b{
+  display:block;font-family:var(--font-body);font-weight:800;
+  font-size:clamp(1.7rem,3.4vw,2.5rem);line-height:1.05;color:var(--ink);
+  font-variant-numeric:tabular-nums;letter-spacing:-0.02em;
+}
+.stat span{display:block;margin-top:.5rem;font-size:.92rem;color:var(--muted);line-height:1.45}
+.hero-media{display:flex;flex-direction:column;align-items:center;gap:1rem}
+@media(min-width:1024px){.hero-media{align-items:flex-end}}
+
+/* ---------- video frames ---------- */
+.vframe{
+  position:relative;border-radius:var(--radius);overflow:hidden;
+  background:var(--ink);width:100%;max-width:350px;aspect-ratio:9/16;
+  box-shadow:0 24px 48px -24px rgba(15,27,45,.45);
+}
+.vframe.wide{max-width:100%;aspect-ratio:16/10}
+.vframe video{width:100%;height:100%;object-fit:cover}
+@media(hover:hover){
+  .vframe{transition:transform .45s ease}
+  .vframe:hover{transform:scale(1.02)}
+}
+.playbtn{
+  position:absolute;inset:0;display:grid;place-items:center;
+  background:linear-gradient(180deg,rgba(12,23,40,0) 55%,rgba(12,23,40,.38));
+  border:0;cursor:pointer;width:100%;
+}
+.playbtn .disc{
+  width:74px;height:74px;border-radius:50%;
+  background:var(--surface);display:grid;place-items:center;
+  box-shadow:0 10px 30px rgba(12,23,40,.35);
+  transition:transform .3s ease,background-color .3s ease;
+}
+.playbtn:hover .disc{transform:scale(1.07);background:#fff}
+.playbtn .tri{
+  width:0;height:0;margin-left:5px;
+  border-top:11px solid transparent;border-bottom:11px solid transparent;
+  border-left:18px solid var(--teal-deep);
+}
+.playbtn[hidden]{display:none}
+.figcap{font-size:.9rem;color:var(--muted);text-align:left;width:100%;max-width:350px}
+.figcap b{color:var(--ink-2);font-weight:700}
+
+/* ---------- sections ---------- */
+section.sec{padding-block:clamp(4rem,8vw,6rem)}
+section.sec.alt{background:var(--paper-2)}
+.sec-grid{display:grid;gap:2rem}
+@media(min-width:1024px){
+  .sec-grid{grid-template-columns:repeat(12,1fr);gap:1.5rem 2rem;align-items:start}
+  .sec-head{grid-column:1/5}
+  .sec-text{grid-column:5/8;padding-top:.5rem}
+  .sec-media{grid-column:8/13}
+}
+.sec-num{
+  font-weight:800;font-size:clamp(3.4rem,6vw,5rem);line-height:1;
+  color:var(--teal);font-variant-numeric:tabular-nums;letter-spacing:-0.02em;
+  display:block;margin-bottom:1rem;
+}
+.sec-head h2{font-size:clamp(2.1rem,4.4vw,3.3rem)}
+.sec-text p{max-width:65ch;color:var(--ink-2)}
+.sec-text p + p{margin-top:1rem}
+.pull{
+  font-family:var(--font-display);font-weight:560;font-size:1.45rem;line-height:1.3;
+  color:var(--ink);margin-top:1.5rem;letter-spacing:-0.01em;text-wrap:balance;
+}
+.pull::before{content:"";display:block;width:2.6rem;height:3px;background:var(--teal-vivid);margin-bottom:1rem}
+.sec-media{display:flex;flex-direction:column;gap:2rem;align-items:flex-start}
+.media-row{display:flex;flex-wrap:wrap;gap:1.5rem}
+figure.shot{width:100%}
+figure.shot img{border-radius:var(--radius);width:100%;height:100%;object-fit:cover}
+figure.shot figcaption{font-size:.9rem;color:var(--muted);margin-top:.5rem}
+figure.shot figcaption b{color:var(--ink-2)}
+
+/* spec list */
+.specs{list-style:none;margin-top:1.5rem;border-top:1px solid var(--line)}
+.specs li{
+  display:flex;justify-content:space-between;gap:1rem;
+  padding:.5rem 0;border-bottom:1px solid var(--line);
+  font-size:1rem;
+}
+.specs li span:first-child{color:var(--muted)}
+.specs li span:last-child{font-weight:700;font-variant-numeric:tabular-nums;text-align:right}
+
+/* gallery */
+.gallery{
+  display:grid;gap:1.5rem;margin-top:3.5rem;
+  grid-template-columns:1fr;
+}
+@media(min-width:768px){
+  .gallery{grid-template-columns:repeat(12,1fr)}
+  .gallery figure:nth-child(1){grid-column:1/8}
+  .gallery figure:nth-child(2){grid-column:8/13}
+  .gallery figure:nth-child(3){grid-column:1/6}
+  .gallery figure:nth-child(4){grid-column:6/13}
+}
+.gallery figure img{aspect-ratio:4/3}
+.gallery figure:nth-child(1) img{aspect-ratio:16/10}
+.gallery figure:nth-child(4) img{aspect-ratio:16/9}
+
+/* development blocks */
+.dev{margin-top:4.5rem}
+.dev:first-of-type{margin-top:3.5rem}
+.dev-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:.5rem 1.5rem;margin-bottom:1rem}
+.dev-head h3{font-size:clamp(1.8rem,3.4vw,2.6rem)}
+.tag{
+  font-size:.78rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--teal-deep);background:color-mix(in srgb, var(--teal-vivid) 18%, var(--surface));
+  padding:.5rem 1rem;border-radius:999px;
+}
+.dev p.lead{max-width:65ch;color:var(--ink-2)}
+.dev .media-row{margin-top:2rem;align-items:flex-start}
+.dev figure.shot{flex:1 1 300px}
+.dev figure.shot img{aspect-ratio:4/3}
+
+/* steps */
+.steps{list-style:none;margin-top:2rem;counter-reset:passo}
+.steps li{
+  display:grid;grid-template-columns:3.2rem 1fr;gap:1rem;
+  padding:1rem 0;border-bottom:1px solid var(--line);align-items:baseline;
+}
+.steps li:first-child{border-top:1px solid var(--line)}
+.steps .n{
+  font-weight:800;font-size:1.5rem;color:var(--teal);
+  font-variant-numeric:tabular-nums;line-height:1;
+}
+.steps b{display:block;font-size:1.06rem}
+.steps span{color:var(--muted);font-size:.97rem}
+
+/* contact */
+.contact{background:var(--navy-band);color:var(--paper)}
+.contact h2{color:var(--surface);font-size:clamp(2.1rem,4.6vw,3.4rem)}
+.contact .sec-num{color:var(--teal-vivid)}
+.contact p{color:#C6D2E2;max-width:65ch}
+.builder{
+  background:var(--surface);color:var(--ink);border-radius:var(--radius);
+  padding:2rem;max-width:560px;
+}
+.builder label{display:block;font-weight:700;font-size:.95rem;margin-bottom:.5rem}
+.builder select,.builder input{
+  width:100%;padding:1rem 1rem;font:inherit;font-size:1rem;
+  border:2px solid var(--line);border-radius:12px;background:#fff;color:var(--ink);
+  margin-bottom:1.5rem;
+}
+.builder select:focus,.builder input:focus{border-color:var(--teal);outline:none;box-shadow:0 0 0 3px color-mix(in srgb, var(--teal) 30%, transparent)}
+.builder .preview{
+  background:var(--paper);border:1px dashed var(--line);border-radius:12px;
+  padding:1rem 1rem;font-size:.96rem;color:var(--ink-2);margin-bottom:1.5rem;
+}
+.builder .preview b{color:var(--muted);display:block;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:.5rem}
+.contact .direct{margin-top:1.5rem;font-size:1.05rem}
+.contact .direct a{color:var(--surface);font-weight:700}
+
+/* footer */
+footer.site{background:var(--navy-band);color:#93A5BC;border-top:1px solid #22344E;padding-block:2.5rem 3rem}
+.footer-in{display:flex;flex-wrap:wrap;gap:1.5rem 3rem;align-items:flex-start;justify-content:space-between}
+footer.site img{height:40px;width:auto}
+footer.site .tagline{font-family:var(--font-display);color:var(--paper);font-size:1.15rem;margin-top:1rem}
+footer.site small{display:block;margin-top:.5rem;line-height:1.7}
+footer.site a{color:#C6D2E2}
+
+/* ---------- scroll-driven motion (única via) ---------- */
+@media (prefers-reduced-motion: no-preference){
+  @supports (animation-timeline: view()){
+    .mask-line{display:block;overflow:hidden;padding-bottom:.08em;margin-bottom:-.08em}
+    .mask-line > span{
+      display:block;
+      animation:line-up linear both;
+      animation-timeline:view();
+      animation-range:entry 5% entry 65%;
+    }
+    @keyframes line-up{from{transform:translateY(112%)}to{transform:translateY(0)}}
+    .sec-num{
+      animation:num-in linear both;
+      animation-timeline:view();
+      animation-range:entry 0% entry 55%;
+    }
+    @keyframes num-in{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:scale(1)}}
+    figure.shot img,.vframe{
+      animation:frame-in linear both;
+      animation-timeline:view();
+      animation-range:entry 0% entry 70%;
+    }
+    @keyframes frame-in{from{clip-path:inset(7% 4% 7% 4% round 18px)}to{clip-path:inset(0 0 0 0 round 18px)}}
+  }
+}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="site">
+  <div class="wrap header-in">
+    <a class="brand" href="#topo" aria-label="SCR Construtora — início">
+      <img src="media/logo-scr-cor.png" alt="SCR Construtora" width="150" height="44">
+    </a>
+    <nav class="main" aria-label="Navegação principal">
+      <a href="#bairro">O bairro</a>
+      <a href="#entregues">Entregues</a>
+      <a href="#em-obra">Em obra</a>
+      <a href="#modelo">O modelo</a>
+      <a href="#quem-constroi">Quem constrói</a>
+    </nav>
+    <div class="header-cta">
+      <a class="btn small" href="https://wa.me/5571983405608?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20SCR%20e%20quero%20saber%20mais%20sobre%20os%20empreendimentos." target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+</header>
+
+<main id="conteudo">
+<!-- ================= HERO ================= -->
+<section class="hero" id="topo">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">SCR Construtora · Salvador — BA</p>
+      <h1>
+        <span class="mask-line"><span>Sonhar.</span></span>
+        <span class="mask-line"><span>Construir.</span></span>
+        <span class="mask-line"><span>Realizar.</span></span>
+      </h1>
+      <p class="hero-sub">Construímos empreendimentos residenciais de alto padrão com excelência. A nossa casa é o Caminho das Árvores: sete dos nossos projetos ficam no mesmo bairro, um ao lado do outro — entregues, em obra e começando.</p>
+      <div class="hero-ctas">
+        <a class="btn" href="https://wa.me/5571983405608?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20SCR%20e%20quero%20saber%20mais%20sobre%20os%20empreendimentos." target="_blank" rel="noopener">Falar no WhatsApp</a>
+        <a class="btn ghost" href="#entregues">Conhecer os empreendimentos</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><b>40 anos</b><span>de trajetória do fundador na construção civil</span></div>
+        <div class="stat"><b>7</b><span>empreendimentos nossos no Caminho das Árvores</span></div>
+        <div class="stat"><b>±400</b><span>empregos diretos gerados pelas nossas obras</span></div>
+      </div>
+    </div>
+    <div class="hero-media">
+      <div class="vframe">
+        <video src="media/video-hero-maestro-aerea.mp4" poster="media/poster-hero-maestro-aerea.jpg" preload="none" playsinline></video>
+        <button class="playbtn" type="button" aria-label="Assistir: Maestro Residence visto de cima, com o mar ao fundo"><span class="disc"><span class="tri"></span></span></button>
+      </div>
+      <p class="figcap"><b>Maestro Residence, em obras</b> — o Caminho das Árvores e o mar, vistos de cima.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 01 O BAIRRO ================= -->
+<section class="sec alt" id="bairro">
+  <div class="wrap sec-grid">
+    <div class="sec-head">
+      <span class="sec-num" aria-hidden="true">01</span>
+      <h2>
+        <span class="mask-line"><span>Um bairro inteiro</span></span>
+        <span class="mask-line"><span>com a nossa</span></span>
+        <span class="mask-line"><span>assinatura</span></span>
+      </h2>
+    </div>
+    <div class="sec-text">
+      <p>Quem anda pelo Caminho das Árvores passa pelas nossas obras: Mansão Unique, Palazzo Unique, Unique Le Quartier, EGEU, Maestro, Riserva Vita e Live. Escolhemos concentrar tudo aqui porque conhecemos cada rua — e porque o bairro entrega o que a gente promete.</p>
+      <p class="pull">Praticidade, boa localização e uma atmosfera agradável: é assim que a gente apresenta o Caminho das Árvores.</p>
+    </div>
+    <div class="sec-media">
+      <figure class="shot">
+        <img src="media/mapa-bairro.jpg" alt="Vista aérea do Caminho das Árvores com os empreendimentos da SCR marcados: Mansão Unique, Live, Palazzo Unique, EGEU, Maestro Residence, Riserva Vita e Unique Le Quartier" loading="lazy">
+        <figcaption><b>Nossos empreendimentos no bairro</b> — sete projetos entre a Alameda dos Sombreiros e a Alameda das Catabas.</figcaption>
+      </figure>
+      <div>
+        <div class="vframe">
+          <video src="media/video-bairro-apresentadora.mp4" poster="media/poster-bairro-apresentadora.jpg" preload="none" playsinline></video>
+          <button class="playbtn" type="button" aria-label="Assistir: apresentação do Caminho das Árvores"><span class="disc"><span class="tri"></span></span></button>
+        </div>
+        <p class="figcap" style="margin-top:1rem"><b>O bairro, apresentado por nós</b> — por que construímos aqui.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 02 ENTREGUES ================= -->
+<section class="sec" id="entregues">
+  <div class="wrap">
+    <div class="sec-grid">
+      <div class="sec-head">
+        <span class="sec-num" aria-hidden="true">02</span>
+        <h2>
+          <span class="mask-line"><span>Entregues,</span></span>
+          <span class="mask-line"><span>morados,</span></span>
+          <span class="mask-line"><span>nossos</span></span>
+        </h2>
+      </div>
+      <div class="sec-text">
+        <p>O nosso mais recente entregue é o <strong>EGEU</strong>, na Alameda dos Sombreiros. A gente mostra por dentro: o tour completo do prédio pronto e, no detalhe, os acabamentos que compõem cada apartamento.</p>
+        <ul class="specs">
+          <li><span>Apartamentos</span><span>173 m²</span></li>
+          <li><span>Suítes</span><span>4</span></li>
+          <li><span>Vagas</span><span>3</span></li>
+          <li><span>Por andar</span><span>2 apartamentos</span></li>
+          <li><span>Áreas de lazer</span><span>mais de 20</span></li>
+        </ul>
+      </div>
+      <div class="sec-media">
+        <div class="media-row">
+          <div>
+            <div class="vframe">
+              <video src="media/video-egeu-tour.mp4" poster="media/poster-egeu-tour.jpg" preload="none" playsinline></video>
+              <button class="playbtn" type="button" aria-label="Assistir: tour pelo EGEU entregue"><span class="disc"><span class="tri"></span></span></button>
+            </div>
+            <p class="figcap" style="margin-top:1rem"><b>Tour do EGEU entregue</b> — o prédio por dentro.</p>
+          </div>
+          <div>
+            <div class="vframe">
+              <video src="media/video-egeu-acabamentos.mp4" poster="media/poster-egeu-acabamentos.jpg" preload="none" playsinline></video>
+              <button class="playbtn" type="button" aria-label="Assistir: acabamentos e detalhes técnicos do EGEU"><span class="disc"><span class="tri"></span></span></button>
+            </div>
+            <p class="figcap" style="margin-top:1rem"><b>Acabamentos de perto</b> — os detalhes técnicos do EGEU concluído.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="gallery" aria-label="EGEU em imagens">
+      <figure class="shot">
+        <img src="media/egeu-aerea-dia.jpg" alt="Vista aérea diurna do EGEU e do Caminho das Árvores" loading="lazy">
+        <figcaption><b>EGEU visto de cima</b> — foto aérea do prédio entregue.</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="media/egeu-aerea-noite.jpg" alt="Vista aérea noturna do EGEU iluminado" loading="lazy">
+        <figcaption><b>EGEU à noite</b> — foto aérea.</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="media/egeu-decorado.jpg" alt="Living do apartamento decorado do EGEU, com varanda integrada" loading="lazy">
+        <figcaption><b>Living do decorado</b> — projeto do apartamento modelo.</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="media/egeu-piscina.jpg" alt="Piscina com deck e espreguiçadeiras do EGEU" loading="lazy">
+        <figcaption><b>Piscina e deck</b> — uma das mais de 20 áreas de lazer, em projeto.</figcaption>
+      </figure>
+    </div>
+
+    <article class="dev">
+      <div class="dev-head"><h3>Unique Le Quartier</h3><span class="tag">Entregue</span></div>
+      <p class="lead">Torre única na Alameda das Catabas, de frente para o bairro inteiro. Apartamentos de 114 a 117 m², com 3 suítes e dois por andar — o nosso primeiro entregue da linha Unique.</p>
+      <div class="media-row">
+        <div>
+          <div class="vframe">
+            <video src="media/video-le-quartier-aerea.mp4" poster="media/poster-le-quartier-aerea.jpg" preload="none" playsinline></video>
+            <button class="playbtn" type="button" aria-label="Assistir: Unique Le Quartier visto de cima"><span class="disc"><span class="tri"></span></span></button>
+          </div>
+          <p class="figcap" style="margin-top:1rem"><b>Le Quartier de cima</b> — a torre entregue e o bairro ao redor.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="dev">
+      <div class="dev-head"><h3>Mansão Unique e Palazzo Unique</h3><span class="tag">Linha Unique</span></div>
+      <p class="lead">Os dois primeiros da família Unique. O <strong>Mansão Unique</strong> tem apartamentos de 212 m², 4 suítes e vista para o mar. O <strong>Palazzo Unique</strong>, na Alameda das Catabas, 305, é ainda mais exclusivo: 250 m², 4 suítes e um apartamento por andar.</p>
+    </article>
+  </div>
+</section>
+
+<!-- ================= 03 EM OBRA ================= -->
+<section class="sec alt" id="em-obra">
+  <div class="wrap">
+    <div class="sec-grid">
+      <div class="sec-head">
+        <span class="sec-num" aria-hidden="true">03</span>
+        <h2>
+          <span class="mask-line"><span>Em obra,</span></span>
+          <span class="mask-line"><span>com a obra</span></span>
+          <span class="mask-line"><span>à mostra</span></span>
+        </h2>
+      </div>
+      <div class="sec-text">
+        <p>Obra nossa não fica atrás do tapume: a gente filma o andamento, publica etapa por etapa e presta contas em assembleia. É o jeito SCR de construir — e quem compra acompanha tudo de perto.</p>
+        <p class="pull">A cada etapa, o projeto ganha forma.</p>
+      </div>
+      <div class="sec-media">
+        <figure class="shot">
+          <img src="media/riserva-obra-aerea.jpg" alt="Vista aérea da obra do Riserva Vita em andamento" loading="lazy">
+          <figcaption><b>Riserva Vita hoje</b> — foto aérea da obra em andamento.</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <article class="dev">
+      <div class="dev-head"><h3>Maestro Residence</h3><span class="tag">Em obra</span></div>
+      <p class="lead">Maestro, um projeto afinado com os seus sonhos. Apartamentos de 159 m², 4 suítes, duas varandas e vista para o mar, com lazer completo. Incorporação da SCR com a DCS Construtora.</p>
+      <div class="media-row">
+        <div>
+          <div class="vframe">
+            <video src="media/video-maestro-andamento.mp4" poster="media/poster-maestro-andamento.jpg" preload="none" playsinline></video>
+            <button class="playbtn" type="button" aria-label="Assistir: andamento da obra do Maestro por drone"><span class="disc"><span class="tri"></span></span></button>
+          </div>
+          <p class="figcap" style="margin-top:1rem"><b>Andamento por drone</b> — a torre subindo.</p>
+        </div>
+        <figure class="shot">
+          <img src="media/maestro-torre.jpg" alt="Projeto da torre do Maestro Residence, com varandas em tom terroso" loading="lazy">
+          <figcaption><b>A torre do Maestro</b> — imagem do projeto.</figcaption>
+        </figure>
+      </div>
+      <div class="media-row">
+        <figure class="shot">
+          <img src="media/maestro-lazer.jpg" alt="Projeto do espaço gourmet e lounge do Maestro Residence" loading="lazy">
+          <figcaption><b>Espaço gourmet e lounge</b> — imagem do projeto.</figcaption>
+        </figure>
+        <div>
+          <div class="vframe">
+            <video src="media/video-maestro-tapume.mp4" poster="media/poster-maestro-tapume.jpg" preload="none" playsinline></video>
+            <button class="playbtn" type="button" aria-label="Assistir: início da obra do Maestro e o tapume Sonhar, Construir, Realizar"><span class="disc"><span class="tri"></span></span></button>
+          </div>
+          <p class="figcap" style="margin-top:1rem"><b>Onde tudo começou</b> — o início da obra e o nosso tapume.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="dev">
+      <div class="dev-head"><h3>Riserva Vita</h3><span class="tag">Em obra</span></div>
+      <p class="lead">Torre única, dois apartamentos por andar e arquitetura de Gustavo Valença, em incorporação com a DCS. Quem assina o projeto apresenta a ideia no vídeo — e a obra, você acompanha aqui e no nosso Instagram, etapa por etapa.</p>
+      <div class="media-row">
+        <div>
+          <div class="vframe">
+            <video src="media/video-riserva-arquiteto.mp4" poster="media/poster-riserva-arquiteto.jpg" preload="none" playsinline></video>
+            <button class="playbtn" type="button" aria-label="Assistir: o arquiteto Gustavo Valença apresenta o Riserva Vita"><span class="disc"><span class="tri"></span></span></button>
+          </div>
+          <p class="figcap" style="margin-top:1rem"><b>O arquiteto apresenta</b> — Gustavo Valença e o conceito do Riserva Vita.</p>
+        </div>
+        <figure class="shot">
+          <img src="media/riserva-render.jpg" alt="Projeto da torre do Riserva Vita ao entardecer" loading="lazy">
+          <figcaption><b>O Riserva pronto</b> — imagem do projeto.</figcaption>
+        </figure>
+      </div>
+    </article>
+
+    <article class="dev">
+      <div class="dev-head"><h3>Ravello</h3><span class="tag">Começando</span></div>
+      <p class="lead">O nosso próximo lançamento no bairro, na Alameda das Catabas, 295, com arquitetura da Carvalho Santana e incorporação SCR + DCS. A primeira assembleia aconteceu em 12 de novembro de 2026: é assim que todo empreendimento nosso começa, com os futuros moradores à mesa.</p>
+      <div class="media-row">
+        <div>
+          <div class="vframe">
+            <video src="media/video-ravello-assembleia.mp4" poster="media/poster-ravello-assembleia.jpg" preload="none" playsinline></video>
+            <button class="playbtn" type="button" aria-label="Assistir: primeira assembleia do Ravello, apresentada por Rodrigo Rego"><span class="disc"><span class="tri"></span></span></button>
+          </div>
+          <p class="figcap" style="margin-top:1rem"><b>1ª assembleia do Ravello</b> — Rodrigo Rego apresenta o empreendimento.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="dev">
+      <div class="dev-head"><h3>Haute</h3><span class="tag">Em obra · Pituba</span></div>
+      <p class="lead">Fora do Caminho das Árvores, o Haute segue em obras na Pituba — o nosso passo seguinte em Salvador.</p>
+      <div class="media-row">
+        <div>
+          <div class="vframe">
+            <video src="media/video-haute-andamento.mp4" poster="media/poster-haute-andamento.jpg" preload="none" playsinline></video>
+            <button class="playbtn" type="button" aria-label="Assistir: andamento da obra do Haute, na Pituba"><span class="disc"><span class="tri"></span></span></button>
+          </div>
+          <p class="figcap" style="margin-top:1rem"><b>Haute em andamento</b> — o canteiro por dentro.</p>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ================= 04 O MODELO ================= -->
+<section class="sec" id="modelo">
+  <div class="wrap sec-grid">
+    <div class="sec-head">
+      <span class="sec-num" aria-hidden="true">04</span>
+      <h2>
+        <span class="mask-line"><span>Regime de</span></span>
+        <span class="mask-line"><span>condomínio,</span></span>
+        <span class="mask-line"><span>contas às claras</span></span>
+      </h2>
+    </div>
+    <div class="sec-text">
+      <p>Nos nossos empreendimentos em regime de condomínio, quem compra participa da construção. As decisões passam por assembleia, as contas são prestadas etapa por etapa e tudo fica registrado: as assembleias são filmadas e publicadas. É a nossa <strong>#gestãotransparente</strong>.</p>
+      <ol class="steps">
+        <li><span class="n">1</span><div><b>Assembleia de lançamento</b><span>O empreendimento é apresentado e o condomínio se forma.</span></div></li>
+        <li><span class="n">2</span><div><b>Mobilização da obra</b><span>Tapume, canteiro e fundações — o começo é publicado.</span></div></li>
+        <li><span class="n">3</span><div><b>Andamento mês a mês</b><span>Vídeos e fotos de cada etapa, no ar para todo mundo ver.</span></div></li>
+        <li><span class="n">4</span><div><b>Prestação de contas</b><span>Números apresentados e discutidos em assembleia.</span></div></li>
+        <li><span class="n">5</span><div><b>Entrega das chaves</b><span>O prédio pronto, do jeito que foi acompanhado desde o início.</span></div></li>
+      </ol>
+    </div>
+    <div class="sec-media">
+      <div>
+        <div class="vframe">
+          <video src="media/video-modelo-regime.mp4" poster="media/poster-modelo-regime.jpg" preload="none" playsinline></video>
+          <button class="playbtn" type="button" aria-label="Assistir: Sérgio Rego explica o regime de condomínio"><span class="disc"><span class="tri"></span></span></button>
+        </div>
+        <p class="figcap" style="margin-top:1rem"><b>Sérgio Rego explica</b> — como funciona o regime de condomínio, do terraço de um dos nossos prédios.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 05 QUEM CONSTRÓI ================= -->
+<section class="sec alt" id="quem-constroi">
+  <div class="wrap sec-grid">
+    <div class="sec-head">
+      <span class="sec-num" aria-hidden="true">05</span>
+      <h2>
+        <span class="mask-line"><span>Uma empresa</span></span>
+        <span class="mask-line"><span>de família</span></span>
+      </h2>
+    </div>
+    <div class="sec-text">
+      <p>A SCR nasceu em 2018, fundada por <strong>Sérgio Rego</strong> — que soma 40 anos de trajetória na construção civil — ao lado dos filhos <strong>Rodrigo</strong>, engenheiro, e <strong>Thiago</strong>. É uma empresa de família, e a família aparece: apresenta assembleia, explica o modelo, mostra a obra.</p>
+      <p>E quem entra, cresce junto: <strong>Lícia Castro</strong> chegou como estagiária e hoje é engenheira da casa, com quatro anos de SCR.</p>
+      <p class="pull">Onde a família está, o futuro se constrói.</p>
+    </div>
+    <div class="sec-media">
+      <div class="media-row">
+        <div>
+          <div class="vframe">
+            <video src="media/video-sergio-historia.mp4" poster="media/poster-sergio-historia.jpg" preload="none" playsinline></video>
+            <button class="playbtn" type="button" aria-label="Assistir: Sérgio Rego conta a história da SCR"><span class="disc"><span class="tri"></span></span></button>
+          </div>
+          <p class="figcap" style="margin-top:1rem"><b>Sérgio conta a história</b> — 40 anos de construção e a fundação da SCR.</p>
+        </div>
+        <div>
+          <div class="vframe">
+            <video src="media/video-licia-depoimento.mp4" poster="media/poster-licia-depoimento.jpg" preload="none" playsinline></video>
+            <button class="playbtn" type="button" aria-label="Assistir: depoimento da engenheira Lícia Castro"><span class="disc"><span class="tri"></span></span></button>
+          </div>
+          <p class="figcap" style="margin-top:1rem"><b>Lícia Castro</b> — de estagiária a engenheira da SCR.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTATO ================= -->
+<section class="sec contact" id="contato">
+  <div class="wrap sec-grid">
+    <div class="sec-head">
+      <span class="sec-num" aria-hidden="true">06</span>
+      <h2>
+        <span class="mask-line"><span>Vamos conversar</span></span>
+        <span class="mask-line"><span>sobre o seu</span></span>
+        <span class="mask-line"><span>próximo endereço</span></span>
+      </h2>
+    </div>
+    <div class="sec-text">
+      <p>Escolhe o empreendimento e o que você quer saber: a mensagem chega pronta no nosso WhatsApp e a gente continua a conversa por lá, sem compromisso.</p>
+      <p class="direct">Se preferir, chama direto: <a href="https://wa.me/5571983405608" target="_blank" rel="noopener">(71) 98340-5608</a><br>
+      E acompanha as obras no Instagram: <a href="https://www.instagram.com/scrconstrutora/" target="_blank" rel="noopener">@scrconstrutora</a></p>
+    </div>
+    <div class="sec-media">
+      <form class="builder" id="montador" aria-label="Montar mensagem para o WhatsApp">
+        <label for="f-emp">Empreendimento de interesse</label>
+        <select id="f-emp" name="empreendimento">
+          <option value="Maestro Residence">Maestro Residence — em obra</option>
+          <option value="Riserva Vita">Riserva Vita — em obra</option>
+          <option value="Ravello">Ravello — começando</option>
+          <option value="EGEU">EGEU — entregue</option>
+          <option value="Unique Le Quartier">Unique Le Quartier — entregue</option>
+          <option value="Haute">Haute — Pituba</option>
+          <option value="um empreendimento da SCR">Ainda não sei — quero conhecer as opções</option>
+        </select>
+        <label for="f-int">O que você quer saber?</label>
+        <select id="f-int" name="interesse">
+          <option value="valores e condições">Valores e condições</option>
+          <option value="plantas e apartamentos disponíveis">Plantas e disponibilidade</option>
+          <option value="como funciona o regime de condomínio">Como funciona o regime de condomínio</option>
+          <option value="o andamento da obra">O andamento da obra</option>
+          <option value="agendar uma visita">Agendar uma visita</option>
+        </select>
+        <label for="f-nome">Seu nome (opcional)</label>
+        <input id="f-nome" name="nome" type="text" autocomplete="name" placeholder="Como podemos te chamar?">
+        <div class="preview" aria-live="polite"><b>Sua mensagem</b><span id="preview-text"></span></div>
+        <button class="btn" type="submit" style="width:100%;justify-content:center">Enviar no WhatsApp</button>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site">
+  <div class="wrap footer-in">
+    <div>
+      <img src="media/logo-scr-branca.png" alt="SCR Construtora" width="140" height="40">
+      <p class="tagline">Sonhar, construir, realizar!</p>
+      <small>SCR - Construtora LTDA · CNPJ 31.408.234/0001-04<br>Caminho das Árvores · Salvador — BA</small>
+    </div>
+    <div>
+      <small><a href="#bairro">O bairro</a> · <a href="#entregues">Entregues</a> · <a href="#em-obra">Em obra</a> · <a href="#modelo">O modelo</a> · <a href="#quem-constroi">Quem constrói</a><br>
+      <a href="https://www.instagram.com/scrconstrutora/" target="_blank" rel="noopener">Instagram @scrconstrutora</a> · <a href="https://wa.me/5571983405608" target="_blank" rel="noopener">WhatsApp</a></small>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // Players: overlay de play + pausa fora da tela (nunca retoma sozinho)
+  var frames = document.querySelectorAll('.vframe');
+  frames.forEach(function(frame){
+    var video = frame.querySelector('video');
+    var btn = frame.querySelector('.playbtn');
+    if(!video || !btn) return;
+    btn.addEventListener('click', function(){
+      video.setAttribute('controls','');
+      video.play();
+      btn.hidden = true;
+    });
+    video.addEventListener('pause', function(){
+      if(video.currentTime === 0 || video.ended){ btn.hidden = false; }
+    });
+  });
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(!e.isIntersecting && !e.target.paused){ e.target.pause(); }
+      });
+    }, {threshold: 0.25});
+    document.querySelectorAll('video').forEach(function(v){ io.observe(v); });
+  }
+
+  // Montador de contato -> wa.me com a mensagem montada
+  var emp = document.getElementById('f-emp');
+  var int = document.getElementById('f-int');
+  var nome = document.getElementById('f-nome');
+  var prev = document.getElementById('preview-text');
+  function montar(){
+    var msg = 'Olá! Tenho interesse no ' + emp.value + ' e quero saber mais sobre ' + int.value + '.';
+    if(nome.value.trim()){ msg += ' Meu nome é ' + nome.value.trim() + '.'; }
+    return msg;
+  }
+  function atualizar(){ prev.textContent = montar(); }
+  [emp, int, nome].forEach(function(el){ el.addEventListener('input', atualizar); el.addEventListener('change', atualizar); });
+  atualizar();
+  document.getElementById('montador').addEventListener('submit', function(ev){
+    ev.preventDefault();
+    window.open('https://wa.me/5571983405608?text=' + encodeURIComponent(montar()), '_blank', 'noopener');
+  });
+})();
+</script>
+</body>
+</html>
